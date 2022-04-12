@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Try RhoBot, a free and accurate predictor for market-manipulation in the crypto-currency markets. Putting an end to crypto-fraud">
+        <meta name="author" content="stacks">
+        <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Flavicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Title -->
+        <title>RhoBot | Dashboard</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+
+      
+        <!-- Theme Styles -->
+        <link href="assets/css/main.min.css" rel="stylesheet">
+        <link href="assets/css/dark-theme.css" rel="stylesheet">
+        <link href="assets/css/custom.css" rel="stylesheet">
+
+        <!--The next three lines allow the Vega embed-->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+      <!-- Loader -->
+      <div class='loader'>
+        <div class='spinner-grow text-primary' role='status'>
+          <span class='sr-only'>Loading...</span>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <script type="text/javascript">
+        window.onload = function () {
+            OpenBootstrapPopup();
+        };
+        function OpenBootstrapPopup() {
+            $("#Modal_1").modal('show');
+        }
+    </script>
+      
+
+
+
+      <!--Modal -->
+      <div class="modal" id="Modal_1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content" style="height: 1000px;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Terms of Service</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="https://google.com" class="btn btn-primary">Return</a>
+              <button type="button" class="btn btn-info" data-bs-dismiss="modal">Agree</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-container">
+          <div class="page-header">
+            <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+              <div class="" id="navbarNav">
+                <ul class="navbar-nav" id="leftNav">
+                  <li class="nav-item">
+                    <a class="nav-link" id="sidebar-toggle" href="#"><i data-feather="arrow-left"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                </ul>
+                </div>
+                <div class="logo">
+                  <a class="navbar-brand" href="dashboard.html"></a>
+                </div>
+                <div class="" id="headerNav">
+                  <ul class="navbar-nav">
+                    <a href="#" id="blockui-1" style="place-self: center" onclick="setButton()" class="connectButton btn btn-outline-success btn-sm"><img src="assets/images/MetaMask_Fox.svg.png" class="m-r-sm" height="22" width="22">Connect Arbitrum Wallet</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/images/avatars/profile-image.png" alt=""></a>
+                      <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                        <a class="dropdown-item" href="social.html"><i data-feather="user"></i>Profile</a>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </nav>
+        </div>
+
+         <div class="page-sidebar">
+           <ul class="list-unstyled accordion-menu">
+            
+            <li class="sidebar-title">
+              Main
+            </li>
+            <li class="active-page">
+                <a href="dashboard.html"><i data-feather="bar-chart-2"></i>Dashboard</a>
+            </li>
+            <li>
+              <a href="help.html"><i data-feather="help-circle"></i>Help</a>
+            </li>
+            
+            <li class="sidebar-title">
+              Profile
+            </li>
+            <li class="active-page">
+              <li><a href="social.html"><i data-feather="user"></i>General</a></li>
+            </li>
+            <li>
+              <li><a href="500.html"><i data-feather="codesandbox"></i>The Null Fund (Rema)</a></li>
+            </li>
+
+              
+
+            <li class="sidebar-title">
+              Code
+            </li>
+            <li class="active-page">
+              <li><a href="https://github.com/FinnCastro"><i data-feather="github"></i>GitHub</a></li>
+            </li>
+
+          </ul>
+           </div>
+
+        <div class="page-content">
+            <div class="main-wrapper">
+
+
+                  <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <h3>RhoBot Pump And Dump Predictor</h3>
+                                <h5>Can ML predictions help prevent crypto-fraud?</h5>
+                                <p>RhoBot.io is a classification-based machine-learning prediction tool. It is born out of a desire to cleanse small crypto-tokens of fraudulent ‘pump-and-dump’s. These are events where an anonymous influencer chooses a small cap coin, and announces to their followers a ‘signal’ to rapidly purchase that coin. The coins price violently surges, and the organisers, who purchased beforehand, sell their tokens onto members, causing many to unwillingly lose their funds. The CFTC have attempted to prevent these fraudulent events by urging whistle-blowers for information – but given the anonymous nature of blockchains and encrypted chatrooms, have not covered ground. I thus approach this issue from another perspective: that the development of a free prediction tool that enables the followers of these groups to predict and pre-purchase the coins, would prevent any price-spike, and therefore remove the monetary incentive from the organising influencers. </p>
+                                <button href="#" id="blockui-2" onclick="pullTheData()" class="btn btn-info predictButton">Predict - 1 RHO</button>
+                                <div class="toast" id="predictToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; left: 20px;">
+                                  <div class="toast-header">
+                                    <img src="assets/images/favicon.ico" class="m-r-sm" alt="Toast image" height="18" width="18">
+                                    <strong class="me-auto">Binance Smart Chain</strong>
+                                    <small class="text-muted">Just Now</small>
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="toast-body" style="text-align: left;">
+                                    Interaction submitted to blockchain...
+                                  </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                  <div class="row">
+                      <div class="col-md-6 col-xl-3">
+                        <div class="card stat-widget">
+                            <div class="card-body">
+                              <h5 id = "time_1" style="text-align: left; color:#7e8a99">00:00 </h5>
+                              <h5 id = "coin_1" class="card-title" style="font-size: 22px;">NA/BTC</h5>
+                                  <h2 id = "confidence_coin_1">0%</h2>
+                                  <p>Prediction Confidence:</p>
+                                  <div class="progress">
+                                    <div id = "width_coin_1" class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-3">
+                        <div class="card stat-widget">
+                            <div class="card-body">
+                              <h5 id = "time_2" style="text-align: left; color:#7e8a99">00:00 </h5>
+                              <h5 id = "coin_2" class="card-title" style="font-size: 22px;">NA/BTC</h5>
+                                  <h2 id = "confidence_coin_2">0%</h2>
+                                  <p>Prediction Confidence:</p>
+                                  <div class="progress">
+                                    <div id = "width_coin_2" class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-3">
+                        <div class="card stat-widget">
+                            <div class="card-body">
+                              <h5 id = "time_3" style="text-align: left; color:#7e8a99">00:00 </h5>
+                              <h5 id = "coin_3" class="card-title" style="font-size: 22px;">NA/BTC</h5>
+                                  <h2 id = "confidence_coin_3">0%</h2>
+                                  <p>Prediction Confidence:</p>
+                                  <div class="progress">
+                                    <div id = "width_coin_3" class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3">
+                      <div class="card stat-widget">
+                          <div class="card-body">
+                            <h5 id = "time_4" style="text-align: left; color:#7e8a99">00:00 </h5>
+                            <h5 id = "coin_4" class="card-title" style="font-size: 22px;">NA/BTC</h5>
+                                <h2 id = "confidence_coin_4">0%</h2>
+                                <p>Prediction Confidence:</p>
+                                <div class="progress">
+                                  <div id = "width_coin_4" class="progress-bar bg-primary progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                      <div class="card" style="background-color: #131722;">
+                        <div class="card-body" style="padding: 35px; text-align: center;">
+                            <h5 id = 'title_coin_1' class="card-title">NA/BTC</h5>
+                            <div id = 'pannel_coin_1'>
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                              <div id="tradingview_6bfea" style="height: 500px;"></div>
+                              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                              <script type="text/javascript">
+                              new TradingView.widget(
+                              {
+                              "autosize": true,
+                              "symbol": "BINANCE:BTCUSDT",
+                              "interval": "1",
+                              "timezone": "Europe/London",
+                              "theme": "dark",
+                              "style": "2",
+                              "locale": "en",
+                              "toolbar_bg": "#f1f3f6",
+                              "enable_publishing": false,
+                              "hide_legend": true,
+                              "allow_symbol_change": true,
+                              "save_image": false,
+                              "watchlist": [
+                                "BINANCE:BTCUSDT/USDT",
+                                "BINANCE:ETHUSDT",
+                                "BINANCE:ADAUSDT",
+                                "BINANCE:DOTUSDT"
+                              ],
+                              "details": true,
+                              "container_id": "tradingview_6bfea"
+                            }
+                              );
+                              </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 col-lg-4">
+                      <div class="card" id="uniswap">
+                        <!-- Iframe inserted here -->
+                      </div>
+                  </div>
+                  </div>
+                
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card" style="background-color: #131722;">
+                          <div class="card-body" style="text-align: center;">
+                              <h5 id = 'title_coin_2' class="card-title"  href="https://www.binance.com/en/trade/BTC_USDT?layout=basic" >NA/BTC</h5>
+                              <div id = 'pannel_coin_2'>
+                              <!-- TradingView Widget BEGIN -->
+                              <div class="tradingview-widget-container">
+                                <div id="tradingview_1dbf7" style="height: 300px;"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                <script type="text/javascript">
+                                new TradingView.widget(
+                                {
+                                "autosize": true,
+                                "symbol": "BINANCE:ETHUSDT",
+                                "timezone": "Europe/London",
+                                "theme": "dark",
+                                "style": "2",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "hide_legend": true,
+                                "range": "1D",
+                                "save_image": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_1dbf7"
+                              }
+                                );
+                                </script>
+                              </div>
+                              <!-- TradingView Widget END -->
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card" style="background-color: #131722;">
+                          <div class="card-body" style="text-align: center;">
+                              <h5 id = 'title_coin_3' class="card-title" href="https://www.binance.com/en/trade/BTC_USDT?layout=basic">NA/BTC</h5>
+                              <div id = 'pannel_coin_3'>
+                              <!-- TradingView Widget BEGIN -->
+                              <div class="tradingview-widget-container">
+                                <div id="tradingview_46928" style="height: 300px;"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                <script type="text/javascript">
+                                new TradingView.widget(
+                                {
+                                "autosize": true,
+                                "symbol": "BINANCE:ADAUSDT",
+                                "timezone": "Europe/London",
+                                "theme": "dark",
+                                "style": "2",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "hide_legend": true,
+                                "range": "1D",
+                                "save_image": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_46928"
+                              }
+                                );
+                                </script>
+                              </div>
+                              <!-- TradingView Widget END --> 
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card" style="background-color: #131722;">
+                          <div class="card-body" style="text-align: center;">
+                              <h5 id = 'title_coin_4' class="card-title" href="https://www.binance.com/en/trade/BTC_USDT?layout=basic" >NA/BTC</h5>
+                              <div id = 'pannel_coin_4'>
+                              <!-- TradingView Widget BEGIN -->
+                              <div class="tradingview-widget-container">
+                                <div id="tradingview_582d2" style="height: 300px;"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                <script type="text/javascript">
+                                new TradingView.widget(
+                                {
+                                "autosize":true,
+                                "symbol": "BINANCE:DOTUSDT",
+                                "timezone": "Europe/London",
+                                "theme": "dark",
+                                "style": "2",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "hide_legend": true,
+                                "range": "1D",
+                                "save_image": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_582d2"
+                              }
+                                );
+                                </script>
+                              </div>
+                              <!-- TradingView Widget END -->
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                          <div class="card">
+                              <div class="card-body">
+                                  <h1 class="card-title" style="text-align: center;">Methodology</h1>
+                                  <p>Predictions of which coins will pump are calculated every 15 minutes, and are available 5 minutes before each quater-hour. For example, the prediction for 16:45 will be available at 16:40. The algorithm is consistently updated.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="row">  
+
+                    <div class="col-md-12 col-lg-4">
+                    <div class="card">
+                      <img src="assets/images/ROC Curve.png" class="card-img-top" alt="...">
+                      <div class="card-body" style="height: 100%;">
+                        <h5 class="card-title">The ROC curve</h5>
+                        <p class="card-text">The Receiver operating characteristic (ROC) curve describes how both the false positive and true positive rate adjusts when the threshold of the classifier changes. A good model would have have both a very low false-positive rate and a high true positive rate.</p>
+                        <p class="card-text"> RhoBot has room for improvement - and as more pump observations are gathered, it will increase in specificity.</p>
+                      </div>
+                    </div>
+                    </div>  
+
+                    <div class="col-md-12 col-lg-4">
+                    <div class="card">
+                      <img src="assets/images/TreeVisual.png" class="card-img-top" alt="...">
+                      <div class="card-body" style="height: 100%;">
+                        <h5 class="card-title">A Random Forest Tree</h5>
+                        <p class="card-text">Random Forests work by taking the dataset, repeatedly sampling it with with duplicates, then creating decision trees for each new set. When predicting each tree is given observation and votes it true or false - the majority vote is the decision.</p>
+                        <p class="card-text"> This is the first tree from the Random Forest. The current version has 34 individual trees, each with a different shape.</p>
+                      </div>
+                    </div>
+                    </div>  
+
+                    <div class="col-md-12 col-lg-4">
+                    <div class="card">
+                      <img src="assets/images/Confusion Matrix.png" class="card-img-top" alt="...">
+                      <div class="card-body" style="height: 100%;">
+                        <h5 class="card-title">The Confusion Matrix</h5>
+                        <p class="card-text">This confusion matrix describes the performace of the classifier. As is apparent, it has an accuracy of 92.3%, misclassification of 7.62%, precision of 37.5%, recall of 20.6% and an f1 score of 0.265.</p>
+                        <p class="card-text">Any changes to the classification threshold trigger an inversely proportion tradeoff between recall and precision. Thus, the best metric for judgement is the f1 score.</p>
+                      </div>
+                    </div>
+                    </div>  
+                  </div>
+
+                  <div class="row">
+                  <div class="col-lg-12 col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">Feature Selection</h5>
+                                <p class="card-text">This is a supervised machine learning model - so feature selection is paramount to a precision. To understand what forms a desision for a chosen coin, I reached out to some of the organisers. Expectedly, they informed me that the 3 largest factors were market-cap, volume and volatility in returns. Many wanted a coin that was extremely illiquid as it would prevent trading bots from instantly arbitraging the coin.</p>
+                                <p class="card-text">For what Random Forests lack in paramater intuition, they make up for in their extremely intuitive description of feature importance. They present each features importance as a percentage - measuring how much the feature contributes to the trees total gini impurity reduction.</p>
+                                <p class="card-text">The most important features of the random forrest are listed below:</p>
+                                <div class="table-responsive">
+                                <table class="table table-hover">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Feature</th>
+                                      <th scope="col">Description</th>
+                                      <th scope="col">Importance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Market Cap (USD)</th>
+                                      <td>Total circulation * price, a higher market cap indicates an inability to pump the token.</td>
+                                    <td>25.29%</td>
+                                    </tr>
+                                  <tr>
+                                    <th scope="row">Number of Market Pairs</th>
+                                      <td>Quantity of pairs the coin/token has</td>
+                                      <td>18.74%</td>
+                                  </tr>
+                                    <tr>
+                                    <th scope="row">Log-Returns 2hrs - 12hrs</th>
+                                      <td>The log returns of the coin x hours before the coin announcement.</td>
+                                    <td>17.3%</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Volume in BTC 15 mins ago</th>
+                                      <td>The volume of Bitcoin traded on Binance 15 mins ago</td>
+                                    <td>2.01%</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Log-Returns 24 hours ago </th>
+                                    <td>The log returns of the coin 24 hours before the coin announcement.</td>
+                                    <td>1.93%</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Volatility of Log-Returns 30 mins ago</th>
+                                    <td>The volatility of log returns 30 mins before the coin announcement</td>
+                                    <td>1.91%</td>
+                                  </tr>
+                                    <tr>
+                                    <th scope="row">Volume over the last 72 hours</th>
+                                    <td>The volume traded over the last 72 hours</td>
+                                    <td>1.77%</td>
+                                  </tr>
+                                </tbody>
+                                </table>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-lg-4">
+                  <div class="card">
+                    <div class="chart text-center" id="RhoBot">
+                      <script>
+                        vegaEmbed('#RhoBot', "assets/charts/chart8_RhoBot.json", {"actions": false});
+                      </script>
+                    </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">History of RhoBot predictions</h5>
+                  <p class="card-text">Above is the total history of RhoBot predictions. As RhoBot improves in precision the spikes in confidence will occur in time periods in which lots of pumps are happening - this is usually at around 7pm UTC on fridays an sundays.</p>
+                  <a href="https://api.rhobot.io/all" class="btn btn-primary btn-sm" download>Data</a>
+                </div>
+
+                </div> 
+                </div>  
+              </div>
+
+              <div class="row">
+              <div class="col">
+                  <div class="card">
+                      <div class="card-body">
+                          <h1 class="card-title" style="text-align: center;">Terms of Service</h1>
+                          <p>These are the terms of service.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+        
+        
+        <!-- Javascripts -->
+        <script src="assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="assets/js/main.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="assets/js/pages/blockui.js"></script>
+        <script src="assets/plugins/blockui/jquery.blockUI.js"></script>
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+        <script src='assets/js/Web3Predictions.js'></script>
+        <script src="assets/js/pages/dashboard.js"></script>
+    </body>
+</html>
+
+

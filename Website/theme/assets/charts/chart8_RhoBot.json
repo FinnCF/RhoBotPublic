@@ -1,0 +1,81 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+  "width": "container",
+  "autosize": {"type": "fit", "contains":"padding"},
+
+ "layer":[
+    
+  {"data": {
+    "url": "http://185.168.193.110/all",
+    "format": {"type":"json"}},
+
+    "mark": {
+      "type": "bar",
+      "width": 5,
+      "color": "#57fa72",
+      "tooltip": true
+    },
+
+    "encoding": {"y": {"field": "Confidence_1", "type": "quantitative","title":null}}
+  },
+
+  {"data": {
+    "url": "http://185.168.193.110/all",
+    "format": {"type":"json"}},
+
+    "mark": {
+      "type": "bar",
+      "width": 5,
+      "color": "#02cdfa",
+      "tooltip": true
+    },
+
+    "encoding": {"y": {"field": "Confidence_2", "type": "quantitative","title":null}}
+  },
+
+  {"data": {
+    "url": "http://185.168.193.110/all",
+    "format": {"type":"json"}},
+
+    "mark": {
+      "type": "bar",
+      "width": 5,
+      "color": "#e7b3e0",
+      "tooltip": true
+    },
+
+    "encoding": {"y": {"field": "Confidence_3", "type": "quantitative","title":null}}
+  },
+
+  {"data": {
+    "url": "http://185.168.193.110/all",
+    "format": {"type":"json"}},
+
+    "mark": {
+      "type": "bar",
+      "width": 5,
+      "color": "#ff0000",
+      "tooltip": true
+    },
+
+    "encoding": {"y": {"field": "Confidence_4", "type": "quantitative","title":null}}
+  }
+  ],
+
+  "height": 315,
+  "padding":15,
+
+  "encoding": {
+    "x": {"field": "Time", "type": "temporal", "title": null}
+  },
+
+ "config": {
+   "background": "#253347",
+   "title": {"color": "#fff"},
+   "style": {"guide-label": {"fill": "#fff"}, "guide-title": {"fill": "#fff"}},
+   "axis": {"domainColor": "#fff", "gridColor": "#aaa", "tickColor": "#fff"}
+  }
+
+  
+}
+
