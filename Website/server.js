@@ -35,9 +35,9 @@ app.use(express.json());
 //Initiating MySQL (install mysql2)
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'node91938-env-4603676.fr-1.paas.massivegrid.net',
-    user: 'root',
-    password: 'EYMdvf25998',
+    host: '',
+    user: '',
+    password: '',
     database: 'RhoBot'
 })
 
