@@ -151,6 +151,13 @@ app.get('/all', async (req, res) => {
     });
 })
 
+app.get('/status', async (req, res) => {
+    //Pulling an arbitrary datapoint from the DB to check if it works.
+    res.send(await pool.query('SELECT * FROM Test').catch(function(err){  
+        res.send(err.code);
+    }))
+})
+
 app.listen(port);
 console.log('Listening on port ' + port);
 

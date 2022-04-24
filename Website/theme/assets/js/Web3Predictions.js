@@ -458,6 +458,7 @@ async function innerTextButtonPredict() {
 }
 
 async function predictToast(event) {
+
   var options = {
     animation : true,
   };
@@ -465,57 +466,18 @@ async function predictToast(event) {
   //Defining toast HTML element. 
   var toastHTMLElement = document.getElementById('predictToast');
 
-  if (event == "pending"){
-    toastHTMLElement.innerHTML = 
-    `<div class="toast-header">
-    <img src="assets/images/favicon.ico" class="m-r-sm" alt="Toast image" height="18" width="18">
-    <strong class="me-auto">Binance Smart Chain</strong>
-    <small class="text-muted">Just Now</small>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body" style="text-align: left;">
-    Transaction Pending...
-  </div>`
-  var toastElement = new bootstrap.Toast(toastHTMLElement, options);
-  toastElement.show()
-  }
-
-
-  if (event == "completed"){
-    toastHTMLElement.innerHTML = 
-    `<div class="toast-header">
-    <img src="assets/images/favicon.ico" class="m-r-sm" alt="Toast image" height="18" width="18">
-    <strong class="me-auto">Binance Smart Chain</strong>
-    <small class="text-muted">Just Now</small>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body" style="text-align: left;">
-    Transaction Complete. Prediction made.
-  </div>`
-  var toastElement = new bootstrap.Toast(toastHTMLElement, options);
-  toastElement.show()
-  }
-
-
-  if (event == "Insuffient Balance"){
-    toastHTMLElement.innerHTML = 
-    `<div class="toast-header">
-    <img src="assets/images/favicon.ico" class="m-r-sm" alt="Toast image" height="18" width="18">
-    <strong class="me-auto">Binance Smart Chain</strong>
-    <small class="text-muted">Just Now</small>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body" style="text-align: left;">
-    Insufficient RHO to make prediction.
-  </div>`
-  var toastElement = new bootstrap.Toast(toastHTMLElement, options);
-  toastElement.show()
-  }
-
-
+  toastHTMLElement.innerHTML = 
+  `<div class="toast-header">
+  <img src="assets/images/favicon.ico" class="m-r-sm" alt="Toast image" height="18" width="18">
+  <strong class="me-auto">RhoBot.io</strong>
+  <small class="text-muted">Just Now</small>
+    <span aria-hidden="true">&times;</span>
+</div>
+<div class="toast-body" style="text-align: left;">
+  ${event}
+</div>`
+var toastElement = new bootstrap.Toast(toastHTMLElement, options);
+toastElement.show()
 }
 
 
@@ -549,41 +511,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
+async function webserverStatus() {
+  let status = (await fetch('http://localhost:8080/status')).json()
+  if(status != 'ECONNREFUSED'){
+    return false
+  }
+  return true
+}
 
 async function makePrediction() {
   
   //Connecting to ensure the most up to date variables
   await setButton()
 
-  if(balance > 0) {
+  //Testing if the webserver is available before allowing any predictions to be made
+  const status = await webserverStatus();
 
-    //Creating a prediction
-    const prediction = await contract.predict();
+  if(status == true) {
+    if(balance > 0) {
 
-    //Setting HTML and toast
-    predictToast('pending')
-    innerTextButtonPending() //Setting the button as pending.
-
-    //Awaiting the prediction to be complete
-    const returned = await prediction.wait(); //waiting for the block to be mined.
-
-    //Retrieving the signature of the transcation for authorisation. 
-    const signature = await signer.signMessage(returned.transactionHash);
-
-    const toPost = {
-      signature: signature,
-      address: accounts[0],
-      hash: returned.transactionHash
+      //Creating a prediction
+      const prediction = await contract.predict();
+  
+      //Setting HTML and toast
+      predictToast('pending')
+      innerTextButtonPending() //Setting the button as pending.
+  
+      //Awaiting the prediction to be complete
+      const returned = await prediction.wait(); //waiting for the block to be mined.
+  
+      //Retrieving the signature of the transcation for authorisation. 
+      const signature = await signer.signMessage(returned.transactionHash);
+  
+      const toPost = {
+        signature: signature,
+        address: accounts[0],
+        hash: returned.transactionHash
+      }
+  
+      //Returning the signature from the prediction. 
+      return toPost
     }
-
-    //Returning the signature from the prediction. 
-    return toPost
+    else {
+      console.log("Not enough RHO to create prediction");
+      predictToast('Insuffient Balance')
+      return false
+    }
   }
   else {
-    console.log("Not enough RHO to create prediction");
-    predictToast('Insuffient Balance')
-    return false
+    predictToast('Database is down, You have not been charged.')
   }
 }
 
